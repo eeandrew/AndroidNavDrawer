@@ -1,0 +1,77 @@
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <!-- As the main content view, the view below consumes the entire
+         space available using match_parent in both dimensions. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_awesome_toolbar"
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:minHeight="40dp"
+            android:background="#C51162"
+            android:title="Hello World"
+           />
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!-- The navigation drawer -->
+    <eeandrew.drawersamplenew.ScrimInsetsFrameLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/my_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:insetForeground="#4000"
+        android:fitsSystemWindows="true"
+        >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:tint="@color/session_photo_scrim"
+            android:src="@drawable/default_cover"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp">
+
+            <eeandrew.drawersamplenew.BezelImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/person_image_empty"
+                android:scaleType="centerCrop"
+                app:maskDrawable="@drawable/circle_mask"/>
+
+        </RelativeLayout>
+    </FrameLayout>
+    <ListView
+        android:id="@+id/drawer_list"
+        android:layout_marginTop="140dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#fff"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp" />
+    </eeandrew.drawersamplenew.ScrimInsetsFrameLayout>
+</android.support.v4.widget.DrawerLayout>
